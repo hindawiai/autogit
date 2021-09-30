@@ -1,4 +1,4 @@
-for user in $(cat candidates); do (cat vcvstatus.md | grep ${user} >/dev/null) || (gh pr checks $(gh pr list | grep ${user} | awk '{print $1}') | grep 'build.pass' | tr '\n' ' ' && echo ${user} $(gh pr status | grep -A1 ${user} | sha256sum | awk '{print $1}') | tr '\n' ' ') | awk '{print $5 " successful with build " $4 " " $3 " <br> ValidCV signature " $6}'; done >>vcvstatus.md
+for user in $(cat candidates); do (cat vcvstatus.md | grep ${user} >/dev/null) || (gh pr checks $(gh pr list | grep ${user} | awk '{print $1}') | grep 'build.pass' | tr '\n' ' ' && echo ${user} $(gh pr status | grep -A1 ${user} | sha256sum | awk '{print $1}') | tr '\n' ' ') | awk '{print "- " $5 " ValidCV signature " $6; print "    - Validation run " $4 " took " $3}'; done >>vcvstatus.md
 git add candidates vcvstatus.md
 git commit -m "vcv update $(date +%s)"
 git pull

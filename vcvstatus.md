@@ -1,2 +1,4 @@
-obonac successful with build https://github.com/hindawiai/autogit/runs/3756969084 4s <br> ValidCV signature 0906b288f7cd58af98c8a8923a9e930b533012251fe584871df5222176a2f62f
-srija-ieee successful with build https://github.com/hindawiai/autogit/runs/3757221526 9s <br> ValidCV signature e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+- obonac ValidCV signature 0906b288f7cd58af98c8a8923a9e930b533012251fe584871df5222176a2f62f
+    - Validation run https://github.com/hindawiai/autogit/runs/3756969084 took 4s
+- srija-ieee ValidCV signature e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+    - Validation run https://github.com/hindawiai/autogit/runs/3757221526 took 9s
