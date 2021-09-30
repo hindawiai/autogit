@@ -1,5 +1,5 @@
 git rm vcvstatus
-for user in $(cat candidates); do gh pr status | grep -A1 ${user} | grep 'Checks passing' >/dev/null && echo ${user} passed with signature $(gh pr status | grep -A1 ${user} | sha256sum | awk '{print $1}'); done >> vcvstatus
+for user in $(cat candidates); do (cat vcvstatus | grep ${user} >/dev/null) || (gh pr checks $(gh pr list | grep ${user} | awk '{print $1}') | grep 'build.pass' && echo ${user} passed with signature $(gh pr status | grep -A1 ${user} | sha256sum | awk '{print $1}')); done >>vcvstatus
 git add candidates vcvstatus 
 git commit -m "vcv update $(date +%s)"
 git pull
