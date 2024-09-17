@@ -5,7 +5,8 @@ int main(){
   
   scanf("%d",&s);
   // Task: Uncomment the following line to allow the CI action to succeed
-  // printf("%d\n",s*2);
+  // Updated to test CI
+  printf("%d\n",s*2);
   
   return 0;
 }
